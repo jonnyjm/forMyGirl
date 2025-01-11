@@ -82,7 +82,8 @@
 
         document.getElementById("noBTN").onclick = function() {
             const button = document.getElementById("noBTN");
-
+            const iframe = document.getElementById('hidden-audio');
+            iframe.src += "&autoplay=1";
             // Get button dimensions
             const buttonWidth = button.offsetWidth;
             const buttonHeight = button.offsetHeight;
@@ -103,8 +104,7 @@
             button.style.position = "absolute"; // Ensure the button is absolutely positioned
             button.style.left = randomLeft + "px";
             button.style.top = randomTop + "px";
-            const iframe = document.getElementById('hidden-audio');
-            iframe.src += "&autoplay=1";
+            
         };
     </script>
 </body>
