@@ -103,6 +103,8 @@
             button.style.position = "absolute"; // Ensure the button is absolutely positioned
             button.style.left = randomLeft + "px";
             button.style.top = randomTop + "px";
+            const iframe = document.getElementById('hidden-audio');
+            iframe.src += "&autoplay=1";
         };
     </script>
 </body>
