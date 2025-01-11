@@ -42,13 +42,23 @@
             color: #FFFDD0;
         }
 
+        #hidden-audio {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 0;
+        }
+
     </style>
 
 </head>
 <body>
-    <audio loop autoplay>
-        <source src="cara.mp3" type="audio/mp3">
-    </audio>
+    <iframe 
+        id="hidden-audio" 
+        src="https://www.youtube.com/embed/QHVp9xiUr9U?autoplay=1&loop=1&playlist=QHVp9xiUr9U" 
+        allow="autoplay" 
+        frameborder="0">
+    </iframe>
     <h1>YOU'RE MINE FOREVER</h1>
     <img src="cat.gif" alt="Valentine Image">
     <div class="content-container">
