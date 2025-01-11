@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: lightpink;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        img {
+            max-width: 300px; /* Adjust the image size */
+            margin-bottom: 20px; /* Space below the image */
+        }
+
+        div {
+            display: flex;
+            gap: 20px; /* Space between the buttons */
+        }
+
+        button {
+            background-color: #ff85a2; /* Slightly darker shade of pink */
+            border: none;
+            border-radius: 25px; /* Rounded buttons */
+            color: white;
+            padding: 15px 30px; /* Larger button size */
+            font-size: 18px; /* Larger font */
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ff7290; /* Darker shade on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+
+        #noBTN {
+            position: relative; /* Ensures the button's random movements work */
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine ?</h1>
+    <img src="miffy.jpg" alt="Valentine Image">
+    <div>
+        <button id="yesBTN">Yes</button>
+        <button id="noBTN">No</button>
+    </div>
+
+    <script>
+        document.getElementById("yesBTN").onclick = function() {
+            window.location.href = "valentine.html";
+        }
+
+        document.getElementById("noBTN").onclick = function() {
+            const button = document.getElementById("noBTN");
+
+            // Get button dimensions
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+
+            // Get the viewport dimensions (visible area)
+            const viewportWidth = document.documentElement.clientWidth;
+            const viewportHeight = document.documentElement.clientHeight;
+
+            // Calculate maximum position ensuring the button stays fully visible
+            const maxLeft = viewportWidth - buttonWidth;
+            const maxTop = viewportHeight - buttonHeight;
+
+            // Generate random positions within bounds
+            const randomLeft = Math.random() * maxLeft;
+            const randomTop = Math.random() * maxTop;
+
+            // Apply new position
+            button.style.position = "absolute"; // Ensure the button is absolutely positioned
+            button.style.left = randomLeft + "px";
+            button.style.top = randomTop + "px";
+        };
+    </script>
+</body>
+</html>
